@@ -7,9 +7,12 @@ function mostrarAumento()
 {
 	var importe;
 	var resultado;
+
 		importe = document.getElementById('txtIdImporte').value;
 		importe = parseInt(importe);
+
 		resultado = importe - (importe * 0.25);
 		resultado = parseInt(resultado);
+		
 		document.getElementById('txtIdResultado').value = resultado;
 }
