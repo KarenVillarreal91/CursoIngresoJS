@@ -1,13 +1,38 @@
 function mostrar()
 {
-	var contador;
-	var acumulador;
+	var contador = 0;
+	var acumulador = 0;
 	var numeroIngresado;
+		
+	contador = parseInt(contador);
+	acumulador = parseInt(acumulador);
 
-	contador=0;
-	acumulador=0;
+	/*do
+	{
+		acumulador = parseInt(acumulador);
 	
+		numeroIngresado = prompt("Ingrese un número.");
+
+		numeroIngresado = parseInt (numeroIngresado);
+
+		acumulador = acumulador + numeroIngresado;
+
+		contador++;
+
+	}while(contador < 5);*/
+
+	while(contador < 5)
+	{
+		numeroIngresado = prompt("Ingrese un número.");
+
+		numeroIngresado = parseInt (numeroIngresado);
+
+		acumulador = acumulador + numeroIngresado;
+
+		contador++;
+	}
 	
-	txtIdSuma.value=acumulador;
-	txtIdPromedio.value=acumulador/5;
+	txtIdSuma.value = acumulador;
+
+	txtIdPromedio.value = acumulador/5;
 }//FIN DE LA FUNCIÓN
