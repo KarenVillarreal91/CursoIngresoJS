@@ -8,6 +8,7 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
+
 function CalcularPrecio () 
 {
      var cantidadLamparas;
@@ -23,75 +24,54 @@ function CalcularPrecio ()
         
         precioBase = 35;
         
-
         cantidadLamparas = parseInt(cantidadLamparas);
         precioConDescuento = parseInt(precioConDescuento);
-        subTotal = parseInt(subTotal);
-        iibb = parseInt(iibb);
-        descuento = parseFloat(descuento);
 
         subTotal = precioBase * cantidadLamparas;
-/*          
+         
              /////CON IF/////
         //A
         if(cantidadLamparas > 5)
         {
             descuento = 0.50;
-        }
-        else //B
+        }//B
+        else if(cantidadLamparas == 5 && marca == "ArgentinaLuz") 
         {
-            if(cantidadLamparas == 5 && marca == "ArgentinaLuz")
+            descuento = 0.40;
+        }
+        else if(cantidadLamparas == 5)
+        {
+            descuento = 0.30;
+        }//C
+        else if(cantidadLamparas == 4 && marca == "ArgentinaLuz" || marca == "FelipeLamparas")
+        {
+            descuento = 0.25;
+        }
+        else if(cantidadLamparas == 4)
+        {  
+            descuento = 0.20;
+        }//D
+        else if(cantidadLamparas == 3)
+        {
+            if(marca == "FelipeLamparas")
             {
-                descuento = 0.40;
+                descuento = 0.10;
+            }
+            else if(marca == "ArgentinaLuz")
+            {
+                descuento = 0.15;
             }
             else
             {
-                if(cantidadLamparas == 5)
-                {
-                    descuento = 0.30;
-                }
-                else //C
-                {
-                    if(cantidadLamparas == 4 && marca == "ArgentinaLuz" || marca == "FelipeLamparas")
-                    {
-                        descuento = 0.25;
-                    }
-                    else 
-                    {   
-                        if(cantidadLamparas == 4)
-                        {  
-                            descuento = 0.20;
-                        }
-                        else //D
-                        {       
-                            if(cantidadLamparas == 3)
-                            {
-                                if(marca == "FelipeLamparas")
-                                {
-                                    descuento = 0.10;
-                                }
-                                else 
-                                {
-                                    if(marca == "ArgentinaLuz")
-                                    {
-                                        descuento = 0.15;
-                                    }
-                                    else
-                                    {
-                                        descuento = 0.05;
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                descuento = 0;
-                            }       
-                        }
-                    }
-                }
+                descuento = 0.05;
             }
-        }*/
-            /////CON SWITCH/////
+        }
+        else
+        {
+           descuento = 0;
+        }       
+        
+       /*     /////CON SWITCH/////
         switch(cantidadLamparas)
         {
             case 5: //B
@@ -146,7 +126,7 @@ function CalcularPrecio ()
             default: //A
                 descuento = 0.50;
             break;
-        }
+        }*/
 
         precioConDescuento = subTotal - (subTotal * descuento);
 
