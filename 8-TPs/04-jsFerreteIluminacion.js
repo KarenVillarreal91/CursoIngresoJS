@@ -28,7 +28,7 @@ function CalcularPrecio ()
         precioConDescuento = parseInt(precioConDescuento);
 
         subTotal = precioBase * cantidadLamparas;
-         
+    /*   
              /////CON IF/////
         //A
         if(cantidadLamparas > 5)
@@ -70,8 +70,8 @@ function CalcularPrecio ()
         {
            descuento = 0;
         }       
-        
-       /*     /////CON SWITCH/////
+        */
+            /////CON SWITCH/////
         switch(cantidadLamparas)
         {
             case 5: //B
@@ -126,7 +126,7 @@ function CalcularPrecio ()
             default: //A
                 descuento = 0.50;
             break;
-        }*/
+        }
 
         precioConDescuento = subTotal - (subTotal * descuento);
 
