@@ -15,15 +15,60 @@ function mostrar()
 	//declarar contadores y variables 
 	var respuesta;
 	var numeroIngresado;
-	var sumaNegativos=0;
+	var sumaNegativos = 0;
+	var sumaPositivos = 0;
+	var contadorNegativos = 0;
+	var contadorPositivos = 0;
+	var contadorCeros = 0;
+	var contadorPares = 0;
+	var promedioPositivos = 0;
+	var promedioNegativos = 0;
+	var diferencia = 0;
 
-	respuesta="si";
+	respuesta = "si";
 
-	while(respuesta=="si")
+	while(respuesta == "si")
 	{
-		
-		respuesta=prompt("desea continuar?");
+		numeroIngresado = prompt("Ingrese un número.");
+
+		numeroIngresado = parseInt(numeroIngresado);
+
+		if(isNaN(numeroIngresado))
+		{
+			continue;
+		}
+		else
+		{
+			if(numeroIngresado > -1 ) //2
+			{
+				sumaPositivos = sumaPositivos + numeroIngresado;
+				
+				contadorPositivos++; //3
+				
+				if(numeroIngresado == 0) //5
+				{
+					contadorCeros++;
+				}
+			}
+			else //1
+			{
+				sumaNegativos = sumaNegativos + numeroIngresado;
+				
+				contadorNegativos++; //4
+			}
+	
+			if(numeroIngresado % 2 == 0) //6
+			{
+				contadorPares++;
+			}
+		}
+
+		respuesta = prompt("Desea continuar? si / no");
 	}//fin del while
 
-	document.write("la suma de negativos es :"+sumaNegativos);
+	promedioPositivos = sumaPositivos / contadorPositivos; //7
+	promedioNegativos = sumaNegativos / contadorNegativos; //8
+	diferencia = sumaPositivos - sumaNegativos; //9
+
+	document.write("</br>La suma números de negativos es : "+sumaNegativos+ ".</br>La suma de números positivos es: "+sumaPositivos+".</br>La cantidad de números positivos es: "+contadorPositivos+".</br>La cantidad de números negativos es: "+contadorNegativos+".</br>La cantidad de ceros es: "+contadorCeros+".</br>La cantidad de números pares es: "+contadorPares+". </br>El promedio de los positivos es: "+promedioPositivos+".</br>El promedio de los negativos es: "+promedioNegativos+"</br>La diferencia entre positivos y negativos es: "+diferencia+".");
 }//FIN DE LA FUNCIÓN

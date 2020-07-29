@@ -9,7 +9,7 @@ function mostrar()
 	
 	while(isNaN(numeroIngresado) || numeroIngresado < 0 || numeroIngresado > 9)
 	{
-		numeroIngresado = prompt("Ingrese un número entre 0 y 9 inclusive.");
+		numeroIngresado = prompt("Error, ingrese un número entre 0 y 9 inclusive.");
 	}
 
 	txtIdNumero.value = numeroIngresado;

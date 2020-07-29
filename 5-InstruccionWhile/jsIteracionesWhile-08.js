@@ -7,13 +7,44 @@ function mostrar()
 	var respuesta;
 	var sumaPositivos;
 	var multiplicacionNegativos;
-	contador=0;
-	sumaPositivos=0;
-	multiplicacionNegativos=1;
-	respuesta='si';
+	var numeroIngresado;
 
+	contador = 0;
+	sumaPositivos = 0;
+	multiplicacionNegativos = 1;
+	respuesta = 'si';
+	 
+	sumaPositivos = parseInt(sumaPositivos);
+	multiplicacionNegativos = parseInt(multiplicacionNegativos);
 
-	txtIdSuma.value=sumaPositivos;
-	txtIdProducto.value=multiplicacionNegativos;
+	while(respuesta == 'si')
+	{
+		numeroIngresado = prompt("Ingrese un número.");
+
+		numeroIngresado = parseInt(numeroIngresado);
+
+		if(isNaN(numeroIngresado))
+		{
+			continue;
+		}
+		else
+		{
+			if(numeroIngresado > 0)
+			{
+				sumaPositivos = sumaPositivos + numeroIngresado;
+			}
+			else
+			{
+				multiplicacionNegativos = numeroIngresado * multiplicacionNegativos;
+			}
+		}
+		
+		contador++;
+
+		respuesta = prompt("Quiere seguir ingresando números? si / no");
+	}
+
+	txtIdSuma.value = sumaPositivos;
+	txtIdProducto.value = multiplicacionNegativos;
 
 }//FIN DE LA FUNCIÓN

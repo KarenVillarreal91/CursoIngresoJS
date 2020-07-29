@@ -8,6 +8,7 @@ function mostrar()
 	var numeroIngresado;
 	var acumulador;
 	var respuesta;
+
 	contador = 0;
 	acumulador = 0;
 	respuesta = 'si';
@@ -15,18 +16,41 @@ function mostrar()
 	numeroIngresado = parseInt(numeroIngresado);
 	acumulador = parseInt(acumulador);
 
-	do
+	/*do
 	{
 		numeroIngresado = prompt("Ingrese un número.");
 		
 		numeroIngresado = parseInt(numeroIngresado);
+
+		if(isNaN(numeroIngresado))
+		{
+			continue;
+		}
 
 		acumulador += numeroIngresado; // acumulador = acumulador + numeroIngresado
 
 		contador++;
 
 		respuesta = prompt("Quiere seguir ingresando números? si / no");
-	}while(respuesta == 'si');
+	}while(respuesta == 'si');*/
+
+	while(respuesta == 'si')
+	{
+		numeroIngresado = prompt("Ingrese un número.");
+		
+		numeroIngresado = parseInt(numeroIngresado);
+
+		if(isNaN(numeroIngresado))
+		{
+			continue;
+		}
+
+		acumulador += numeroIngresado; 
+
+		contador++;
+
+		respuesta = prompt("Quiere seguir ingresando números? si / no");
+	}
 
 	txtIdSuma.value = acumulador;
 	txtIdPromedio.value = acumulador/contador;

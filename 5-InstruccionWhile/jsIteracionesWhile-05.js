@@ -5,11 +5,11 @@ function mostrar()
 {
 	var sexoIngresado;
 
-	sexoIngresado = prompt("Ingrese f ó m .");
+	sexoIngresado = prompt("Ingrese el sexo, f ó m.");
 
-	while(!(isNaN(sexoIngresado)) || sexoIngresado != 'f' && sexoIngresado != 'm')
+	while(sexoIngresado != 'f' && sexoIngresado != 'm')
 	{
-		sexoIngresado = prompt("Ingrese f ó m .");
+		sexoIngresado = prompt("Error. Ingrese el sexo, f ó m.");
 	}
 
 	txtIdSexo.value = sexoIngresado;
