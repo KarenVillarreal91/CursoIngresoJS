@@ -13,9 +13,6 @@ function mostrar()
 	acumulador = 0;
 	respuesta = 'si';
 
-	numeroIngresado = parseInt(numeroIngresado);
-	acumulador = parseInt(acumulador);
-
 	/*do
 	{
 		numeroIngresado = prompt("Ingrese un número.");

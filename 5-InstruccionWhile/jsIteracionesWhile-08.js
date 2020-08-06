@@ -13,9 +13,6 @@ function mostrar()
 	sumaPositivos = 0;
 	multiplicacionNegativos = 1;
 	respuesta = 'si';
-	 
-	sumaPositivos = parseInt(sumaPositivos);
-	multiplicacionNegativos = parseInt(multiplicacionNegativos);
 
 	while(respuesta == 'si')
 	{

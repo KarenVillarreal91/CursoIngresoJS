@@ -9,10 +9,10 @@ function mostrar()
 	var numeroMinimo = 0;
 	var respuesta;
 	//iniciar variables
-	banderaDelPrimero = "Es el primero.";
-	respuesta = 'si';
+	banderaDelPrimero = 0;
+	respuesta = true;
 
-	while(respuesta == "si")
+	while(respuesta)
 	{
 		numeroIngresado = prompt("Ingrese un número.");
 
@@ -24,14 +24,19 @@ function mostrar()
 		}
 		else
 		{
-			if(numeroIngresado > numeroMaximo)
+			if(banderaDelPrimero == 0)
 			{
+				banderaDelPrimero++;
+
 				numeroMaximo = numeroIngresado;
+				numeroMinimo = numeroIngresado;
 			}
 			else
 			{
-				numeroMinimo = numeroIngresado;
-	
+				if(numeroIngresado > numeroMaximo)
+				{
+					numeroMaximo = numeroIngresado;
+				}
 				if(numeroIngresado < numeroMinimo)
 				{
 					numeroMinimo = numeroIngresado;
@@ -39,7 +44,7 @@ function mostrar()
 			}
 		}
 		
-		respuesta = prompt("Desea continuar? si / no");
+		respuesta = confirm("Desea continuar?");
 	}
 
 	txtIdMaximo.value = numeroMaximo;

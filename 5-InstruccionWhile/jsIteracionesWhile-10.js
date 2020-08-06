@@ -21,13 +21,13 @@ function mostrar()
 	var contadorPositivos = 0;
 	var contadorCeros = 0;
 	var contadorPares = 0;
-	var promedioPositivos = 0;
-	var promedioNegativos = 0;
-	var diferencia = 0;
+	var promedioPositivos;
+	var promedioNegativos;
+	var diferencia;
 
-	respuesta = "si";
+	respuesta = true;
 
-	while(respuesta == "si")
+	while(respuesta)
 	{
 		numeroIngresado = prompt("Ingrese un número.");
 
@@ -63,12 +63,36 @@ function mostrar()
 			}
 		}
 
-		respuesta = prompt("Desea continuar? si / no");
+		respuesta = confirm("Desea continuar?");
 	}//fin del while
 
-	promedioPositivos = sumaPositivos / contadorPositivos; //7
-	promedioNegativos = sumaNegativos / contadorNegativos; //8
+	if(contadorPositivos > 0) //7
+	{
+		promedioPositivos = sumaPositivos / contadorPositivos;
+	}
+	else
+	{
+		promedioPositivos = " No hay números postivos.";
+	}
+
+	if(contadorNegativos > 0) //8
+	{
+		promedioNegativos = sumaNegativos / contadorNegativos; 
+	}
+	else
+	{
+		promedioNegativos = " No hay números negativos.";
+	}
+
 	diferencia = sumaPositivos - sumaNegativos; //9
 
-	document.write("</br>La suma números de negativos es : "+sumaNegativos+ ".</br>La suma de números positivos es: "+sumaPositivos+".</br>La cantidad de números positivos es: "+contadorPositivos+".</br>La cantidad de números negativos es: "+contadorNegativos+".</br>La cantidad de ceros es: "+contadorCeros+".</br>La cantidad de números pares es: "+contadorPares+". </br>El promedio de los positivos es: "+promedioPositivos+".</br>El promedio de los negativos es: "+promedioNegativos+"</br>La diferencia entre positivos y negativos es: "+diferencia+".");
+	document.write("La suma números de negativos es : "+sumaNegativos+ "."
+	,"<br>La suma de números positivos es: "+sumaPositivos+"."
+	,"<br>La cantidad de números positivos es: "+contadorPositivos+"."
+	,"<br>La cantidad de números negativos es: "+contadorNegativos+"."
+	,"<br>La cantidad de ceros es: "+contadorCeros+"."
+	,"<br>La cantidad de números pares es: "+contadorPares+"."
+	,"<br>El promedio de los positivos es: "+promedioPositivos+"."
+	,"<br>El promedio de los negativos es: "+promedioNegativos+"."
+	,"<br>La diferencia entre positivos y negativos es: "+diferencia+".");
 }//FIN DE LA FUNCIÓN
